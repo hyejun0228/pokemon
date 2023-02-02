@@ -6,6 +6,31 @@ export const Title = styled.img`
 	display: block;
 `;
 
+export const ClassList = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+`;
+
+export const ClassCover = styled.div`
+	width: 90px;
+	overflow: hidden;
+	border-radius: 0 10px 0 0;
+	flex-wrap: wrap;
+`;
+
+export const Class = styled.div`
+	background-color: white;
+	width: 90px;
+	height: 30px;
+	border-radius: 10px 0 0 0;
+	background-color: white;
+	transform: skew(-20deg) translate(30px, 0px);
+	flex-wrap: wrap;
+	font-style: normal;
+`;
+
 export const Total = styled.div`
 	display: flex;
 	align-items: center;
@@ -29,13 +54,35 @@ export const CardForm = styled.div`
 	margin: 10px;
 	width: 200px;
 	margin-right: auto;
+	height: 400px;
 `;
 
-export const CardTitle = styled.h2`
+export const CardTitle = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+`;
+
+export const CardList = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+`;
+
+export const PokemonType = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: 4px;
+`;
+
+export const PokemonTypes = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 export const PokemonPicture = styled.img`
@@ -49,4 +96,8 @@ export const PokemonId = styled.h5`
 	width: 20%;
 	margin: 5px;
 	margin-top: 3px;
+`;
+
+export const AbilitiesInfo = styled.div`
+	font-size: 3px;
 `;
