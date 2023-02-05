@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Pokemon from './components/Pokemon';
-import Grass from './components/classify/Grass';
+import Grass from './components/Grass';
 
 function App() {
 	return (

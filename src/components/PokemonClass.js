@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Grass from './classify/Grass';
+import Grass from './Grass';
 import * as S from './Pokemon.styled';
 
 function PokemonClass() {

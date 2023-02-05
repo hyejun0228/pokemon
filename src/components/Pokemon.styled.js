@@ -114,6 +114,7 @@ export const PokemonPicture = styled.img`
 	margin-bottom: 0%;
 	display: block;
 	border: double 5px black;
+	border-radius: 7px;
 `;
 
 export const PokemonId = styled.h5`
@@ -135,6 +136,16 @@ export const PokemonSkill = styled.div`
 	justify-content: center;
 	font-family: 'Pokemon X and Y', 'Courier New';
 	margin: 8px;
-	font-size: 17px;
+	font-size: 15px;
+	margin-top: 10px;
+`;
+
+export const PokemonSpecies = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Pokemon X and Y', 'Courier New';
+	margin: 8px;
+	font-size: 15px;
 	margin-top: 10px;
 `;

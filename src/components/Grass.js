@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
-import Grass from './Grass';
 import * as S from './Pokemon.styled';
 import PokemonClass from './PokemonClass';
 
-function Pokemon() {
+function Grass() {
 	const [pokemon, setPokemon] = useState([]);
-	//const [nextPage, setNextPage] = useState(0);
+	const [GrassPokemon, setGrassPokemon] = useState([]);
 
 	useEffect(() => {
 		for (let i = 1; i < 31; i++) {
@@ -15,11 +14,13 @@ function Pokemon() {
 				setPokemon((p) => [...p, res.data]);
 			});
 		}
+		pokemon.forEach(())
+	
 	}, []);
-	<Grass pokemoninfo={pokemon} />;
 
 	return (
 		<div>
+			dfdf
 			<S.Title
 				src='https://fontmeme.com/permalink/230201/e358c4eb5918b0425e1a4dbe09b24efc.png'
 				alt='포켓몬사전'
@@ -32,6 +33,7 @@ function Pokemon() {
 							<Card pokemoninfo={pokemonDatas} />
 						</div>
 					))}
+
 					{/* <div>
 					<h3>-{nextPage}-</h3>
 					<button onClick={onClick}>Next Page</button>
@@ -41,5 +43,13 @@ function Pokemon() {
 		</div>
 	);
 }
+export default Grass;
 
-export default Pokemon;
+// 	if (
+// 		res.data.types[0].type.name ||
+// 		res.data.types[1].type.name ||
+// 		res.data.types[2].type.name === 'grass'
+// 	) {
+// 		setGrassPokemon((p) => [...p, res.data]);
+// 	}
+// });
