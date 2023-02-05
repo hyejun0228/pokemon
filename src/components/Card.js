@@ -1,6 +1,7 @@
 import Backcard from './Backcard';
 import Frontcard from './Frontcard';
 import React, { useState } from 'react';
+import * as S from './Pokemon.styled';
 
 function Card({ pokemoninfo }) {
 	const [side, setSide] = useState(true);
@@ -10,13 +11,13 @@ function Card({ pokemoninfo }) {
 	};
 
 	return (
-		<div onClick={onClick}>
+		<S.WholeCard onClick={onClick}>
 			{side ? (
 				<Frontcard pokemoninfo={pokemoninfo} />
 			) : (
 				<Backcard pokemoninfo={pokemoninfo} />
 			)}
-		</div>
+		</S.WholeCard>
 	);
 }
 export default Card;

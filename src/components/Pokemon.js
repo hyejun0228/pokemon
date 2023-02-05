@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import * as S from './Pokemon.styled';
+import PokemonClass from './PokemonClass';
 
 function Pokemon() {
 	const [pokemon, setPokemon] = useState([]);
@@ -21,18 +22,20 @@ function Pokemon() {
 				src='https://fontmeme.com/permalink/230201/e358c4eb5918b0425e1a4dbe09b24efc.png'
 				alt='포켓몬사전'
 			></S.Title>
-
-			<S.Total>
-				{pokemon.map((pokemonDatas, index) => (
-					<div key={index}>
-						<Card pokemoninfo={pokemonDatas} />
-					</div>
-				))}
-				{/* <div>
+			<S.Screen>
+				<PokemonClass />
+				<S.Total>
+					{pokemon.map((pokemonDatas, index) => (
+						<div key={index}>
+							<Card pokemoninfo={pokemonDatas} />
+						</div>
+					))}
+					{/* <div>
 					<h3>-{nextPage}-</h3>
 					<button onClick={onClick}>Next Page</button>
 				</div> */}
-			</S.Total>
+				</S.Total>
+			</S.Screen>
 		</div>
 	);
 }
