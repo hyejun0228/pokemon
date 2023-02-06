@@ -29,27 +29,27 @@ function Pokemon() {
 			></S.Title>
 			<S.Screen>
 				<PokemonClass />
-				<label>
-					페이지 당 표시할 게시물 수 : &nbsp;
+				<S.Label>
+					Number of pokemon cards per page : &nbsp;
 					<select
 						type='number'
 						value={limit}
 						onChange={({ target: { value } }) => setLimit(Number(value))}
 					>
-						<option value='10'>10</option>
-						<option value='12'>12</option>
-						<option value='20'>20</option>
-						<option value='50'>50</option>
+						<option value='30'>30</option>
+						<option value='40'>40</option>
+						<option value='60'>60</option>
+						<option value='80'>80</option>
 						<option value='100'>100</option>
 					</select>
-				</label>
-				<div>
+				</S.Label>
+				<S.Total>
 					{pokemon.slice(offset, offset + limit).map((pokemonDatas, index) => (
 						<div key={index}>
 							<Card pokemoninfo={pokemonDatas} />
 						</div>
 					))}
-				</div>
+				</S.Total>
 
 				<footer>
 					<Pagination

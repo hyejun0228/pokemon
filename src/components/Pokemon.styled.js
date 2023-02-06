@@ -25,7 +25,8 @@ export const Class = styled.div`
 	border-radius: 7px;
 	width: 55px;
 	height: 25px;
-	margin: 5px;
+	margin: 7px;
+	margin-bottom: 10px;
 	font-family: 'Pokemon X and Y', 'Courier New';
 	display: flex;
 	align-items: center;
@@ -53,10 +54,9 @@ export const FrontCardForm = styled.div`
 	border-radius: 5px;
 	background-color: white;
 	margin: 10px;
+	margin-right: 10px;
 	width: 200px;
-	margin-right: 10px;
-	margin-right: 10px;
-	height: 400px;
+	height: 350px;
 `;
 
 export const BackCardForm = styled.div`
@@ -67,7 +67,7 @@ export const BackCardForm = styled.div`
 	width: 200px;
 	margin-right: 10px;
 	margin-right: 10px;
-	height: 400px;
+	height: 350px;
 `;
 
 export const WholeCard = styled.div``;
@@ -146,6 +146,19 @@ export const PokemonSpecies = styled.div`
 	justify-content: center;
 	font-family: 'Pokemon X and Y', 'Courier New';
 	margin: 8px;
-	font-size: 15px;
+	font-size: 13px;
 	margin-top: 10px;
+	text-align: center;
+`;
+//=======표시할 포켓몬의 수 적는곳 ========
+export const Label = styled.label`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 5px;
+	border: double;
+	border-radius: 5px;
+	font-family: 'Pokemon X and Y', 'Courier New';
+	background-color: white;
+	font-size: 17px;
 `;
