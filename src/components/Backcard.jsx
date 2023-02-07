@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import * as S from './Pokemon.styled';
+import * as S from './Backcard.styled';
 
 function Backcard({ pokemoninfo }) {
 	const [species, setSpecies] = useState([]);

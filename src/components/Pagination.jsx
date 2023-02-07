@@ -1,7 +1,7 @@
 import * as S from './pagination.styled';
 
-function Pagination({ limit, page, setPage }) {
-	const numPages = Math.ceil(1009 / limit);
+function Pagination({ limit, page, setPage, count }) {
+	const numPages = Math.ceil(count / limit);
 
 	return (
 		<>

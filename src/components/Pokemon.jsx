@@ -10,6 +10,7 @@ function Pokemon() {
 	const [pokemon, setPokemon] = useState([]);
 	const [limit, setLimit] = useState(30);
 	const [page, setPage] = useState(1);
+	const [count, setCount] = useState(0);
 	const offset = (page - 1) * limit;
 
 	useEffect(() => {
@@ -18,6 +19,9 @@ function Pokemon() {
 				setPokemon((p) => [...p, res.data]);
 			});
 		}
+		axios.get(`https://pokeapi.co/api/v2/pokemon`).then((res) => {
+			setCount(res.data.count);
+		});
 	}, []);
 	<Grass pokemoninfo={pokemon} />;
 
@@ -53,7 +57,7 @@ function Pokemon() {
 
 				<footer>
 					<Pagination
-						//Total={pokemon.length}
+						count={count}
 						limit={limit}
 						page={page}
 						setPage={setPage}

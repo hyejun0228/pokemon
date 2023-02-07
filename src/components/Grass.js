@@ -11,7 +11,7 @@ function Grass() {
 	useEffect(() => {
 		axios.get(`https://pokeapi.co/api/v2/pokemon`).then((res) => {
 			setPokemon((p) => [...p, res.data]);
-			console.log(res.data.results);
+			console.log(res);
 		});
 		//console.log(pokemon);
 		//pokemon.forEach(())
