@@ -22,7 +22,7 @@ function Backcard({ pokemoninfo }) {
 				))}
 				<S.PokemonPicture
 					src={pokemoninfo.sprites.back_default}
-					alt='포켓몬 사진'
+					alt='Waiting for future updates...'
 				></S.PokemonPicture>
 				<S.PokemonSpecies>[ Characteristic ]</S.PokemonSpecies>
 				<S.PokemonSpecies>{species}</S.PokemonSpecies>

@@ -38,6 +38,7 @@ export const PokemonPicture = styled.img`
 	display: block;
 	border: double 5px black;
 	border-radius: 7px;
+	font-family: 'Pokemon X and Y', 'Courier New';
 `;
 
 export const BackCardForm = styled.div`
@@ -49,4 +50,7 @@ export const BackCardForm = styled.div`
 	margin-right: 10px;
 	margin-right: 10px;
 	height: 350px;
+	:hover {
+		box-shadow: 3px 3px 3px;
+	}
 `;

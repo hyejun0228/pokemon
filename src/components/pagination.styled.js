@@ -7,6 +7,12 @@ export const Button = styled.button`
 	font-family: 'Pokemon X and Y', 'Courier New';
 	margin-top: 20px;
 	margin-bottom: 20px;
+	:hover {
+		cursor: url(PokemonBallCursor2.png), auto;
+		background-color: black;
+		color: white;
+		border: double white;
+	}
 `;
 
 export const Nav = styled.nav`
@@ -14,4 +20,7 @@ export const Nav = styled.nav`
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
+	:hover {
+		cursor: url(PokemonBallCursor2.png), auto;
+	}
 `;

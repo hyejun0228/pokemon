@@ -11,6 +11,7 @@ function Pokemon() {
 	const [limit, setLimit] = useState(30);
 	const [page, setPage] = useState(1);
 	const [count, setCount] = useState(0);
+	const [type, setType] = useState([]);
 	const offset = (page - 1) * limit;
 
 	useEffect(() => {
@@ -27,15 +28,17 @@ function Pokemon() {
 
 	return (
 		<div>
-			<S.Title
-				src='https://fontmeme.com/permalink/230201/e358c4eb5918b0425e1a4dbe09b24efc.png'
-				alt='포켓몬사전'
-			></S.Title>
+			<S.Cover>
+				<S.Title
+					src='https://fontmeme.com/permalink/230201/e358c4eb5918b0425e1a4dbe09b24efc.png'
+					alt='포켓몬사전'
+				></S.Title>
+			</S.Cover>
 			<S.Screen>
 				<PokemonClass />
 				<S.Label>
 					Number of pokemon cards per page : &nbsp;
-					<select
+					<S.Select
 						type='number'
 						value={limit}
 						onChange={({ target: { value } }) => setLimit(Number(value))}
@@ -45,7 +48,7 @@ function Pokemon() {
 						<option value='60'>60</option>
 						<option value='80'>80</option>
 						<option value='100'>100</option>
-					</select>
+					</S.Select>
 				</S.Label>
 				<S.Total>
 					{pokemon.slice(offset, offset + limit).map((pokemonDatas, index) => (
@@ -53,8 +56,9 @@ function Pokemon() {
 							<Card pokemoninfo={pokemonDatas} />
 						</div>
 					))}
+					<br />
 				</S.Total>
-
+				<S.Page>&lt; -- {page} -- &gt;</S.Page>
 				<footer>
 					<Pagination
 						count={count}

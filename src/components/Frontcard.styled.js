@@ -8,6 +8,9 @@ export const FrontCardForm = styled.div`
 	margin-right: 10px;
 	width: 200px;
 	height: 350px;
+	:hover {
+		box-shadow: 3px 3px 3px;
+	}
 `;
 
 export const PokemonId = styled.h5`

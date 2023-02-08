@@ -1,18 +1,18 @@
 import Backcard from './Backcard';
 import Frontcard from './Frontcard';
 import React, { useState } from 'react';
-import * as S from './Pokemon.styled';
+import * as S from './Card.styled';
 
 function Card({ pokemoninfo }) {
-	const [side, setSide] = useState(true);
+	const [isFront, setIsFront] = useState(true);
 
 	const onClick = () => {
-		setSide((p) => !p);
+		setIsFront((p) => !p);
 	};
 
 	return (
 		<S.WholeCard onClick={onClick}>
-			{side ? (
+			{isFront ? (
 				<Frontcard pokemoninfo={pokemoninfo} />
 			) : (
 				<Backcard pokemoninfo={pokemoninfo} />
