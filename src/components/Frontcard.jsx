@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as S from './Frontcard.styled';
-import HeartButton from './HeartButton';
+//import HeartButton from './HeartButton';
 
 function Frontcard({ pokemoninfo }) {
 	return (

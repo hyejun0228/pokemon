@@ -24,7 +24,6 @@ function Pokemon() {
 			setCount(res.data.count);
 		});
 	}, []);
-	<Grass pokemoninfo={pokemon} />;
 
 	return (
 		<div>
