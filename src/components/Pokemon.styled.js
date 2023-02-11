@@ -8,35 +8,20 @@ export const Title = styled.img`
 	margin-left: -352px;
 	margin-top: 40px;
 	margin-bottom: 50px;
-	/* max-width: 90%;
-	height: auto;
-	
-	margin-left: 100px;
-	margin-right: 100px;
-	display: block;
-	 */
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;
 	}
 	background-size: 30px;
 `;
 
-export const Cover = styled.div`
-	width: 0px;
-	margin: auto;
-`;
-
-export const Select = styled.select`
-	border: 0;
-	border-radius: 5px;
-`;
-export const Screen = styled.div`
+export const GrayScreen = styled.div`
 	background-color: #73777b;
 	border-radius: 15px;
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;
 	}
 `;
+
 export const ClassList = styled.div`
 	display: flex;
 	align-items: center;
@@ -68,25 +53,6 @@ export const Class = styled.div`
 	}
 `;
 
-export const Total = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	//	flex-direction: column;이건 위에서 아래로 정렬임
-	margin-top: 75px;
-	margin-left: 20px;
-	margin-right: 20px;
-	background-color: white;
-	border-radius: 10px;
-	border: inset 7px;
-	width: auto;
-	height: auto;
-	flex-wrap: wrap; //페이지키우면 키우는대로 조절되는 기능~굿굿
-	:hover {
-		cursor: url(PokemonBallCursor3.png), auto;
-	}
-`;
-
 export const AbilitiesInfo = styled.div`
 	font-size: 3px;
 `;
@@ -107,15 +73,80 @@ export const Label = styled.label`
 		cursor: url(PokemonBallCursor2.png), auto;
 	}
 `;
+//=========흰색=====
+export const PokemonCardViewer = styled.div`
+	//display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	border: inset 7px;
+	margin: 75px 20px 20px 20px;
+`;
 
-export const Page = styled.p`
+export const Cards = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap; //페이지키우면 키우는대로 조절되는 기능~굿굿
+	:hover {
+		cursor: url(PokemonBallCursor3.png), auto;
+	}
+`;
+
+export const PageController = styled.div`
+	flex-direction: row;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+`;
+
+export const Page = styled.button`
 	font-family: 'Pokemon X and Y', 'Courier New';
-	background-color: white;
 	font-size: 15px;
+	//text-align: center;
+	margin-left: 5px;
+	border: double;
+	border-radius: 5px;
+	background-color: white;
+	:hover {
+		cursor: url(PokemonBallCursor2.png), auto;
+	}
+`;
+
+export const Button = styled.button`
+	margin-left: 5px;
+	border: double;
+	border-radius: 5px;
+	font-family: 'Pokemon X and Y', 'Courier New';
+	:hover {
+		cursor: url(PokemonBallCursor2.png), auto;
+		background-color: black;
+		color: white;
+		border: double white;
+	}
+`;
+//=============
+export const NumberButton = styled.button`
+	margin-left: 5px;
+	border: double;
+	border-radius: 5px;
+	font-family: 'Pokemon X and Y', 'Courier New';
+	margin-top: 20px;
+	margin-bottom: 20px;
+	:hover {
+		cursor: url(PokemonBallCursor2.png), auto;
+		background-color: black;
+		color: white;
+		border: double white;
+	}
+`;
+
+export const Nav = styled.nav`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;
 	}

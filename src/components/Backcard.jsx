@@ -2,10 +2,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import * as S from './Backcard.styled';
 
-function Backcard({ pokemoninfo }) {
+function Backcard({ pokemonDatas }) {
 	const [species, setSpecies] = useState([]);
 	useEffect(() => {
-		axios.get(pokemoninfo.species.url).then((response) => {
+		axios.get(pokemonDatas.species.url).then((response) => {
 			setSpecies(response.data.flavor_text_entries[1].flavor_text);
 		});
 	}, [species]);
@@ -13,15 +13,15 @@ function Backcard({ pokemoninfo }) {
 	return (
 		<div>
 			<S.BackCardForm>
-				<S.PokemonId># {pokemoninfo.id}</S.PokemonId>
+				<S.PokemonId># {pokemonDatas.id}</S.PokemonId>
 				<S.PokemonSkill>[ Skills List ]</S.PokemonSkill>
-				{pokemoninfo.abilities.map((PokemonAbilities, index) => (
+				{pokemonDatas.abilities.map((PokemonAbilities, index) => (
 					<S.PokemonSkill key={index}>
 						- {PokemonAbilities.ability.name}
 					</S.PokemonSkill>
 				))}
 				<S.PokemonPicture
-					src={pokemoninfo.sprites.back_default}
+					src={pokemonDatas.sprites.back_default}
 					alt='Waiting for future updates...'
 				></S.PokemonPicture>
 				<S.PokemonSpecies>[ Characteristic ]</S.PokemonSpecies>
