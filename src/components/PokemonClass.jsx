@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-//import { Link } from 'react-router-dom';
-//import Grass from './Grass';
+import React, { useContext, useEffect, useState } from 'react';
+import Card from './Card';
 import * as S from './Pokemon.styled';
+import { TypeContext } from './Pokemon';
 
 function PokemonClass() {
+	//const [type, setType] = useState(true);
+	const { setType } = useContext(TypeContext);
 	const Class = [
 		'grass',
 		'fire',
@@ -25,14 +26,27 @@ function PokemonClass() {
 		'dark',
 	];
 
+	const onClick = (e) => {
+		console.log(e.target.innerText);
+		setType(e.target.innerText);
+	};
+
+	// useEffect(() => {
+	// 	console.log('타입이 바뀜! : ' + type);
+	// }, [type]);
+
 	return (
-		<S.ClassList>
-			{Class.map((res, index) => (
-				<Link to='/Grass'>
-					<S.Class key={index}>{res}</S.Class>
-				</Link>
-			))}
-		</S.ClassList>
+		<>
+			<S.ClassList>
+				{Class.map((res) => (
+					// <Link to='/Grass'>
+					<S.Class onClick={onClick} key={res}>
+						{res}
+					</S.Class>
+					// </Link>
+				))}
+			</S.ClassList>
+		</>
 	);
 }
 

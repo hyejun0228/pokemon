@@ -104,7 +104,6 @@ export const PageController = styled.div`
 export const Page = styled.button`
 	font-family: 'Pokemon X and Y', 'Courier New';
 	font-size: 15px;
-	//text-align: center;
 	margin-left: 5px;
 	border: double;
 	border-radius: 5px;

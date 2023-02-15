@@ -7,6 +7,7 @@ function Frontcard({ pokemonDatas }) {
 		<div>
 			<S.FrontCardForm>
 				<S.PokemonId># {pokemonDatas.id}</S.PokemonId>
+				{/* <button type='checkbox'>담기</button> */}
 				<S.CardTitle>{pokemonDatas.name}</S.CardTitle>
 
 				<S.CardList>
