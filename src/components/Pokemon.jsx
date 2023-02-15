@@ -15,7 +15,7 @@ function Pokemon() {
 	const [offsetNumber, setOffsetNumber] = useState(0);
 	const [pokemonDatas, setPokemonDatas] = useState([]);
 	//const [isShow, setIsShow] = useState(true);
-	const [Type, setType] = useState(true);
+	const [Type, setType] = useState('');
 	const value = useMemo(() => ({ Type, setType }), [Type, setType]);
 
 	useEffect(() => {
@@ -37,46 +37,33 @@ function Pokemon() {
 			});
 	}, [pokemon]);
 
-	const backTenPage = () => {
-		setOffsetNumber((p) => p - 300);
-		setPage(page - 10);
+	useEffect(() => {
 		axios
 			.get(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${offsetNumber}`)
 			.then((res) => {
 				setPokemon(res.data.results);
 			});
+	}, [offsetNumber, page]);
+
+	const backTenPage = () => {
+		setOffsetNumber((p) => p - 300);
+		setPage(page - 10);
 	};
 
 	const backOnePage = () => {
 		setOffsetNumber((p) => p - 30);
 		setPage(page - 1);
-		axios
-			.get(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${offsetNumber}`)
-			.then((res) => {
-				setPokemon(res.data.results);
-			});
 	};
 
 	const nextOnePage = () => {
 		setOffsetNumber((p) => p + 30);
 		setPage(page + 1);
-		axios
-			.get(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${offsetNumber}`)
-			.then((res) => {
-				setPokemon(res.data.results);
-			});
 	};
 
 	const nextTenPage = () => {
 		setOffsetNumber((p) => p + 300);
 		setPage(page + 10);
-		axios
-			.get(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${offsetNumber}`)
-			.then((res) => {
-				setPokemon(res.data.results);
-			});
 	};
-	//console.log(pokemonDatas);
 
 	return (
 		<TypeContext.Provider value={value}>

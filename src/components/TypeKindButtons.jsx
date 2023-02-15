@@ -3,7 +3,7 @@ import { TypeContext } from './Pokemon';
 import * as S from './TypekindButton.styled';
 
 function TypeKindButtons({ pokemonDatas }) {
-	const { setType, Type } = useContext(TypeContext);
+	const { setType } = useContext(TypeContext);
 
 	const typesName = [
 		'grass',
@@ -27,19 +27,7 @@ function TypeKindButtons({ pokemonDatas }) {
 
 	const onClick = (e) => {
 		setType(e.target.innerText);
-		// pokemonDatas &&
-		// 	pokemonDatas.types.forEach((element) => {
-		// 		if (element.type.name !== Type) {
-		// 			setIsShow(false);
-		// 		} else {
-		// 			setIsShow(true);
-		// 		}
-		// 	});
 	};
-
-	// useEffect(() => {
-	// 	console.log('타입이 바뀜! : ' + type);
-	// }, [type]);
 
 	return (
 		<>

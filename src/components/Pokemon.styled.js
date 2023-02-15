@@ -4,9 +4,7 @@ export const Title = styled.img`
 	position: relative;
 	width: 700px;
 	left: 50%;
-	margin-left: -352px;
-	margin-top: 40px;
-	margin-bottom: 50px;
+	margin: 40px auto 50px -352px;
 	background-size: 30px;
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;
