@@ -12,13 +12,18 @@ export const Title = styled.img`
 `;
 
 export const GrayScreen = styled.div`
+	display: flex;
 	background-color: #73777b;
 	border-radius: 15px;
+	margin: 15px;
+	padding: 17px;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;
 	}
 `;
-
 export const AbilitiesInfo = styled.div`
 	font-size: 3px;
 `;
@@ -49,7 +54,7 @@ export const PokemonCardsViewer = styled.div`
 
 export const Cards = styled.div`
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	flex-wrap: wrap; //페이지키우면 키우는대로 조절되는 기능~
 	:hover {
 		cursor: url(PokemonBallCursor3.png), auto;
@@ -67,11 +72,12 @@ export const PageController = styled.div`
 
 export const CountPage = styled.button`
 	font-family: 'Pokemon X and Y', 'Courier New';
-	font-size: 15px;
+	font-size: 17px;
 	margin-left: 5px;
 	border: double;
 	border-radius: 5px;
 	background-color: white;
+
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;
 	}
@@ -81,6 +87,7 @@ export const ControlButton = styled.button`
 	margin-left: 5px;
 	border: double;
 	border-radius: 5px;
+	font-size: 17px;
 	font-family: 'Pokemon X and Y', 'Courier New';
 	:hover {
 		cursor: url(PokemonBallCursor2.png), auto;

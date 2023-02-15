@@ -2,3 +2,6 @@ body {
 	background-color: #b20600;
 }
 /* #b2b2b2 : 회색 */
+body:hover {
+	cursor: url(../public/PokemonBallcursor2.png), auto;
+}

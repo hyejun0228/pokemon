@@ -7,7 +7,6 @@ function App() {
 		<div>
 			<Routes>
 				<Route path='/' element={<Pokemon />} />
-				{/* <Route path='/Grass' element={<Grass />} /> */}
 			</Routes>
 		</div>
 	);

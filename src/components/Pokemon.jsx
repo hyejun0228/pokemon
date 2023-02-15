@@ -19,31 +19,23 @@ function Pokemon() {
 	const value = useMemo(() => ({ Type, setType }), [Type, setType]);
 
 	useEffect(() => {
-		axios
-			.get(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${offsetNumber}`)
-			.then((res) => {
-				setPokemon(res.data.results);
-			});
-		//console.log(pokemon);
-	}, []);
-
-	useEffect(() => {
-		pokemon &&
-			pokemon.forEach((pokemonDatas) => {
-				axios.get(`${pokemonDatas.url}`).then((res) => {
-					//console.log(res.data);
-					setPokemonDatas((p) => [...p, res.data]);
-				});
-			});
-	}, [pokemon]);
-
-	useEffect(() => {
+		setPokemon(null);
 		axios
 			.get(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${offsetNumber}`)
 			.then((res) => {
 				setPokemon(res.data.results);
 			});
 	}, [offsetNumber, page]);
+
+	useEffect(() => {
+		setPokemonDatas([]);
+		pokemon &&
+			pokemon.forEach((pokemonDatas) => {
+				axios.get(`${pokemonDatas.url}`).then((res) => {
+					setPokemonDatas((p) => [...p, res.data]);
+				});
+			});
+	}, [pokemon]);
 
 	const backTenPage = () => {
 		setOffsetNumber((p) => p - 300);
