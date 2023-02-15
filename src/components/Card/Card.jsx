@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { TypeContext } from '../Pokemon';
-import Frontcard from './Frontcard';
-import Backcard from './Backcard';
+import Frontcard from './FrontCard/Frontcard';
+import Backcard from './BackCard/Backcard';
 import axios from 'axios';
 
 function Card({ pokemoninfo }, { type }) {
