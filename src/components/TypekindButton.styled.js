@@ -25,7 +25,6 @@ export const TypesNameButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	font-size: 24px;
-
 	:hover {
 		background-color: black;
 		color: white;
