@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { TypeContext } from './Pokemon';
+import { TypeContext } from '../Pokemon';
 import Frontcard from './Frontcard';
 import Backcard from './Backcard';
 import axios from 'axios';

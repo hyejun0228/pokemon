@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext, useMemo } from 'react';
 import TypeKindButtons from './TypeKindButtons';
 import * as S from './Pokemon.styled';
 import axios from 'axios';
-import Card from './Card';
+import Card from './Card/Card';
 
 export const TypeContext = createContext({
 	setType: () => {},
