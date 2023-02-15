@@ -8,11 +8,16 @@ export const TypeContext = createContext({
 	setType: () => {},
 });
 
+export const ShowContext = createContext({
+	setIsShow: () => {},
+});
+
 function Pokemon() {
 	const [pokemon, setPokemon] = useState(null);
 	const [page, setPage] = useState(1);
 	const [offsetNumber, setOffsetNumber] = useState(0);
 	const [Type, setType] = useState(true);
+
 	const value = useMemo(() => ({ setType, Type }), [setType, Type]);
 
 	useEffect(() => {

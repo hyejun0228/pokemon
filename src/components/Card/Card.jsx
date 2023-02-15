@@ -4,10 +4,11 @@ import Frontcard from './FrontCard/Frontcard';
 import Backcard from './BackCard/Backcard';
 import axios from 'axios';
 
-function Card({ pokemoninfo }, { type }) {
+function Card({ pokemoninfo }) {
 	const [isFront, setIsFront] = useState(true);
 	const [pokemonDatas, setPokemonDatas] = useState(null);
-	const [showPokemonDatas, setShowPokemonDatas] = useState(null);
+	//const { isShow } = useContext(TypeContext);
+	const [isShow, setIsShow] = useState(true);
 	const { Type } = useContext(TypeContext);
 
 	useEffect(() => {
@@ -16,37 +17,29 @@ function Card({ pokemoninfo }, { type }) {
 		});
 	}, [pokemoninfo.url]);
 
-	// useEffect(() => {
-	// 	console.log('card로 type이 전달:' + type);
-	// 	console.log(pokemoninfo);
-	// }, [type, pokemoninfo]);
-
-	useEffect(() => {
-		pokemonDatas &&
-			pokemonDatas.types.forEach((element) => {
-				if (element.type.name === Type) {
-					setShowPokemonDatas(pokemonDatas);
-					//console.log('타입에 맞게 저장됨' + showPokemonDatas);
-				}
-			});
-	}, [showPokemonDatas, pokemonDatas, Type]);
-
-	// useEffect(() => {
-	// 	console.log(showPokemonDatas);
-	// }, [showPokemonDatas]);
-
 	const onClick = () => {
 		setIsFront((p) => !p);
 	};
 
+	//pokemonDatas &&
+	//pokemonDatas.types.forEach((element) => {
+	//		if (element.type.name !== Type) {
+	//			console.log(isShow);
+	//		setIsShow(false);
+	//	} else {
+	//		setIsShow(true);
+	//	}
+	//	});
+
 	return (
 		<>
 			<div onClick={onClick}>
-				{showPokemonDatas &&
+				{isShow &&
+					pokemonDatas &&
 					(isFront ? (
-						<Frontcard pokemonDatas={showPokemonDatas} />
+						<Frontcard pokemonDatas={pokemonDatas} />
 					) : (
-						<Backcard pokemonDatas={showPokemonDatas} />
+						<Backcard pokemonDatas={pokemonDatas} />
 					))}
 			</div>
 		</>
