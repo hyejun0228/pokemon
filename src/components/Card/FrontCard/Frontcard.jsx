@@ -1,6 +1,7 @@
 import * as S from './Frontcard.styled';
 
 function Frontcard({ pokemonDatas }) {
+	console.log(pokemonDatas);
 	return (
 		<div>
 			<S.FrontCardForm>

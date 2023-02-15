@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { TypeContext } from './Pokemon';
 import * as S from './TypekindButton.styled';
 
-function TypeKindButtons() {
-	const { setType } = useContext(TypeContext);
+function TypeKindButtons({ pokemonDatas }) {
+	const { setType, Type } = useContext(TypeContext);
+
 	const typesName = [
 		'grass',
 		'fire',
@@ -26,6 +27,14 @@ function TypeKindButtons() {
 
 	const onClick = (e) => {
 		setType(e.target.innerText);
+		// pokemonDatas &&
+		// 	pokemonDatas.types.forEach((element) => {
+		// 		if (element.type.name !== Type) {
+		// 			setIsShow(false);
+		// 		} else {
+		// 			setIsShow(true);
+		// 		}
+		// 	});
 	};
 
 	// useEffect(() => {

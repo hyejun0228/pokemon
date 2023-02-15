@@ -6,9 +6,6 @@ import Card from './Card/Card';
 
 export const TypeContext = createContext({
 	setType: () => {},
-});
-
-export const ShowContext = createContext({
 	setIsShow: () => {},
 });
 
@@ -16,9 +13,10 @@ function Pokemon() {
 	const [pokemon, setPokemon] = useState(null);
 	const [page, setPage] = useState(1);
 	const [offsetNumber, setOffsetNumber] = useState(0);
+	const [pokemonDatas, setPokemonDatas] = useState([]);
+	//const [isShow, setIsShow] = useState(true);
 	const [Type, setType] = useState(true);
-
-	const value = useMemo(() => ({ setType, Type }), [setType, Type]);
+	const value = useMemo(() => ({ Type, setType }), [Type, setType]);
 
 	useEffect(() => {
 		axios
@@ -26,7 +24,18 @@ function Pokemon() {
 			.then((res) => {
 				setPokemon(res.data.results);
 			});
+		//console.log(pokemon);
 	}, []);
+
+	useEffect(() => {
+		pokemon &&
+			pokemon.forEach((pokemonDatas) => {
+				axios.get(`${pokemonDatas.url}`).then((res) => {
+					//console.log(res.data);
+					setPokemonDatas((p) => [...p, res.data]);
+				});
+			});
+	}, [pokemon]);
 
 	const backTenPage = () => {
 		setOffsetNumber((p) => p - 300);
@@ -67,6 +76,7 @@ function Pokemon() {
 				setPokemon(res.data.results);
 			});
 	};
+	//console.log(pokemonDatas);
 
 	return (
 		<TypeContext.Provider value={value}>
@@ -78,10 +88,10 @@ function Pokemon() {
 				<TypeKindButtons />
 				<S.PokemonCardsViewer>
 					<S.Cards>
-						{pokemon &&
-							pokemon.map((pokemonDatas, index) => (
-								<div key={pokemonDatas.name}>
-									<Card pokemoninfo={pokemonDatas} />
+						{pokemonDatas &&
+							pokemonDatas.map((datas) => (
+								<div key={datas.id}>
+									<Card pokemonDatas={datas} />
 								</div>
 							))}
 					</S.Cards>
