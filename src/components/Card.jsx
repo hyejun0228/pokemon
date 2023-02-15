@@ -1,14 +1,13 @@
-import Backcard from './Backcard';
-import Frontcard from './Frontcard';
 import React, { useEffect, useState, useContext } from 'react';
-import * as S from './Card.styled';
-import axios from 'axios';
 import { TypeContext } from './Pokemon';
+import Frontcard from './Frontcard';
+import Backcard from './Backcard';
+import axios from 'axios';
 
 function Card({ pokemoninfo }, { type }) {
 	const [isFront, setIsFront] = useState(true);
 	const [pokemonDatas, setPokemonDatas] = useState(null);
-	const [finalPokemon, setFinalPokemon] = useState(null);
+	const [showPokemonDatas, setShowPokemonDatas] = useState(null);
 	const { Type } = useContext(TypeContext);
 
 	useEffect(() => {
@@ -17,28 +16,24 @@ function Card({ pokemoninfo }, { type }) {
 		});
 	}, [pokemoninfo.url]);
 
-	useEffect(() => {
-		console.log('card로 type이 전달:' + type);
-		console.log(pokemoninfo);
-	}, [type, pokemoninfo]);
-
 	// useEffect(() => {
-	// 	console.log(pokemonDatas);
-	// }, [pokemonDatas]);
+	// 	console.log('card로 type이 전달:' + type);
+	// 	console.log(pokemoninfo);
+	// }, [type, pokemoninfo]);
 
 	useEffect(() => {
 		pokemonDatas &&
 			pokemonDatas.types.forEach((element) => {
 				if (element.type.name === Type) {
-					setFinalPokemon(pokemonDatas);
-					console.log('타입에 맞게 저장됨' + finalPokemon);
+					setShowPokemonDatas(pokemonDatas);
+					//console.log('타입에 맞게 저장됨' + showPokemonDatas);
 				}
 			});
-	}, [finalPokemon, pokemonDatas, Type]);
+	}, [showPokemonDatas, pokemonDatas, Type]);
 
-	useEffect(() => {
-		console.log(finalPokemon);
-	}, [finalPokemon]);
+	// useEffect(() => {
+	// 	console.log(showPokemonDatas);
+	// }, [showPokemonDatas]);
 
 	const onClick = () => {
 		setIsFront((p) => !p);
@@ -46,14 +41,14 @@ function Card({ pokemoninfo }, { type }) {
 
 	return (
 		<>
-			<S.WholeCard onClick={onClick}>
-				{finalPokemon &&
+			<div onClick={onClick}>
+				{showPokemonDatas &&
 					(isFront ? (
-						<Frontcard pokemonDatas={finalPokemon} />
+						<Frontcard pokemonDatas={showPokemonDatas} />
 					) : (
-						<Backcard pokemonDatas={finalPokemon} />
+						<Backcard pokemonDatas={showPokemonDatas} />
 					))}
-			</S.WholeCard>
+			</div>
 		</>
 	);
 }

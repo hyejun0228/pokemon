@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Card from './Card';
-import * as S from './Pokemon.styled';
+import React, { useContext } from 'react';
 import { TypeContext } from './Pokemon';
+import * as S from './TypekindButton.styled';
 
-function PokemonClass() {
-	//const [type, setType] = useState(true);
+function TypeKindButtons() {
 	const { setType } = useContext(TypeContext);
-	const Class = [
+	const typesName = [
 		'grass',
 		'fire',
 		'ice',
@@ -27,7 +25,6 @@ function PokemonClass() {
 	];
 
 	const onClick = (e) => {
-		console.log(e.target.innerText);
 		setType(e.target.innerText);
 	};
 
@@ -37,17 +34,15 @@ function PokemonClass() {
 
 	return (
 		<>
-			<S.ClassList>
-				{Class.map((res) => (
-					// <Link to='/Grass'>
-					<S.Class onClick={onClick} key={res}>
+			<S.TypesNameList>
+				{typesName.map((res) => (
+					<S.TypesNameButton onClick={onClick} key={res}>
 						{res}
-					</S.Class>
-					// </Link>
+					</S.TypesNameButton>
 				))}
-			</S.ClassList>
+			</S.TypesNameList>
 		</>
 	);
 }
 
-export default PokemonClass;
+export default TypeKindButtons;
